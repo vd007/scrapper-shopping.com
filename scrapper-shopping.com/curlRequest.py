@@ -1,3 +1,5 @@
+import sys
+
 def itemCount(str):
     import pycurl
     from io import BytesIO
@@ -49,7 +51,12 @@ def itemCountPageWise(str,pageNumber):
 
     return
 
-itemCount('macbook');
-itemCountPageWise('apple','4')
+#itemCount('macbook');
+#itemCountPageWise('macbook+pro','4')
+argLength = len(sys.argv)
+if argLength == 2:
+	itemCount(sys.argv[1])
+else:
+	itemCountPageWise(sys.argv[1],sys.argv[2])
 
 
